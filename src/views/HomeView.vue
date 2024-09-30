@@ -4,7 +4,6 @@ import { useProductStore } from '@/stores/product'
 const productStore = useProductStore()
 
 const router = useRouter()
-const productStore = useProductStore()
 
 function visualizar(id) {
   router.push(`/product/${id}`)
@@ -28,7 +27,10 @@ function visualizar(id) {
         <td>{{ product.id }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.price }}</td>
-        <td><button @click="visualizar(product.id)">ver</button></td>
+        <td>
+        <button @click="visualizar(product.id)">ver</button>
+        <button @click="visualizar(product.id)">excluir</button>
+        </td>
       </tr>
     </tbody>
   </table>
